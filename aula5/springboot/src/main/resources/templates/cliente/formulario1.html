@@ -1,0 +1,75 @@
+<!-- formulário sem bootstrap ---- bootstrap foi colocado no tema 5 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Estoque</title>
+
+</head>
+<body>
+
+	<div>
+		<h1>Dados do Cliente</h1>
+		<hr>
+
+		<form th:action="@{/clientes}" th:object="${cliente}" method="POST">
+			<input id="ativo" type="hidden" th:field="*{id}" />
+			<div>
+				<label for="ativo">Registro ativo</label> <input id="ativo"
+					type="checkbox" th:field="*{ativo}" />
+			</div>
+			<div>
+				<label for="nome">Nome</label> <input id="nome" type="text"
+					th:field="*{nome}" />
+
+			</div>
+			<div>
+
+				<label for="cpf">CPF</label> <input id="cpf" type="text"
+					th:field="*{cpf}" />
+			</div>
+			<div>
+				<label for="dataDeNascimento">Data de Nascimento</label> <input
+					id="dataDeNascimento" type="date" th:field="*{dataDeNascimento}" />
+
+			</div>
+			<div>
+				<label for="sexo">Sexo</label> <select id="sexo" th:field="*{sexo}">
+					<option value="">Selecione uma opção</option>
+					<option value="MASCULINO">Masculino</option>
+					<option value="FEMININO">Feminino</option>
+				</select>
+
+			</div>
+
+			<div>
+
+				<label for="telefone">Telefone</label> <input id="telefone"
+					type="text" th:field="*{telefone}" />
+			</div>
+			<div>
+				<label for="celular">Celular</label> 
+				<input id="celular" type="text"
+					th:field="*{celular}" />
+			</div>
+			<div>
+				<label for="email">E-mail</label> 
+				<input id="email" type="text"
+					th:field="*{email}" />
+
+			</div>
+
+			<div>
+				<input  type="submit" value="Salvar" />
+			</div>
+		</form>
+	</div>
+
+
+</body>
+</html>
+
+
+
+
+
